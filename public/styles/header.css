@@ -1,0 +1,22 @@
+header {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 100%;
+  background-color: #dc9c2c;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../images/textured-bg.png');
+}
+
+header div {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* .nav-img {
+  
+} */
