@@ -6,13 +6,13 @@
 .new-tweet h2 {
   margin: 0 auto 25px;
   text-align: center;
+  z-index: 1;
 }
 
 #tweet-text{
   background-color: #f4f1ec;
   border: none;
   width: 90%;
-  
 }
 
 .new-tweet div {
@@ -36,12 +36,11 @@
 }
 
 .new-tweet button {
-  background-color: mediumblue;
-  border-radius: 5px;
+  background-color: #4056A1;;
   margin: 10px 0 0 5%;
   font-family: "Bungee", sans-serif;
   color: white;
-  border-color: mediumblue;
+  border-color: #4056A1;;
 }
 
 .new-tweet output {
@@ -51,4 +50,9 @@
 
 .new-tweet label {
   margin-left: 5%;
+  font-size: x-large;
+}
+
+.spacer {
+  height: 5px;
 }
