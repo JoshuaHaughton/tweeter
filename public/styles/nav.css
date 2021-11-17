@@ -3,6 +3,7 @@ nav {
   height: 120px;
   width: 100%;
   z-index: 1;
+  position: fixed;
   background-color: #4056A1;
   color: #FFFFFF;
   padding: 0 1.5em;
@@ -58,4 +59,8 @@ nav p {
 
 nav i {
   color: red;
+}
+
+.spacer {
+  height: 120px !important;
 }
