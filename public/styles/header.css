@@ -1,4 +1,4 @@
-header {
+.main-header {
   display: flex;
   flex-direction: column;
   height: 400px;
@@ -9,7 +9,7 @@ header {
   background-image: url('../images/textured-bg.png');
 }
 
-header div {
+.main-header div {
   display: flex;
   width: 100%;
   justify-content: center;

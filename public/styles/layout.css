@@ -28,7 +28,10 @@ body {
 
  main {
    display: flex;
+   flex-direction: row;
+   flex-flow: wrap;
    width: 90%;
    margin: auto;
    background-color: #f4f1ec;
+   border: 1px dotted red;
  }

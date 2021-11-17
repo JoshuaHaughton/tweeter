@@ -1,6 +1,7 @@
 .new-tweet {
   justify-content: center;
   width: 100%;
+  border: 1px dotted black;
 }
 
 .new-tweet h2 {
@@ -31,28 +32,28 @@
   display: block;
   margin: 0 auto;
   border-bottom: 4px solid rgb(31, 30, 30);
-  width: 90%;
-  font-weight: 700;
+  width: 100%;
+  font-weight: 600;
 }
 
 .new-tweet button {
-  background-color: #4056A1;;
-  margin: 10px 0 0 5%;
+  background-color: #4056A1;
+  margin: 10px 0 0 0;
   font-family: "Bungee", sans-serif;
   color: white;
-  border-color: #4056A1;;
+  border-color: #4056A1;
 }
 
 .new-tweet output {
   font-family: "Bungee", sans-serif;
-  margin: 5px 7%;
+  margin: 5px 2%;
 }
 
 .new-tweet label {
-  margin-left: 5%;
   font-size: x-large;
 }
 
 .spacer {
   height: 5px;
 }
+
