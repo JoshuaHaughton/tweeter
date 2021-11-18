@@ -89,5 +89,14 @@ $(() => {
 
   renderTweets(data)
 
+  $("#tweet-form").submit(function(event) {
+    event.preventDefault();
+    const serialized = $( this ).serialize();
+    $.post( "/tweets", serialized, function(data) {
+      // $( ".result" ).html( data );
+      console.log(serialized);
+    });
+  })
+
 
 })
