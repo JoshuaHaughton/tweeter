@@ -33,6 +33,13 @@
 
 
 $(() => {
+
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const createTweetElement = function(tweetData) {
 
     const $tweet = $(`
@@ -42,18 +49,18 @@ $(() => {
 
             <div class="name">
               <img src="${tweetData.user.avatars}"></i>
-              <p>${tweetData.user.name}</p>
+              <p>${escape(tweetData.user.name)}</p>
             </div>
 
             <div>
-              <p>${tweetData.user.handle}</p>
+              <p>${escape(tweetData.user.handle)}</p>
             </div>
 
           </header>
 
           <div class="bottom-border">
             
-            <p class="tweet-content">${tweetData.content.text}</p>
+            <p class="tweet-content">${escape(tweetData.content.text)}</p>
             
             <!-- <textarea type='hidden' cols="30" rows="10" readonly>text here</textarea> -->
             
