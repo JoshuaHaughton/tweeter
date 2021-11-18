@@ -1,23 +1,35 @@
 .main-header {
-  display: flex;
-  flex-direction: column;
   height: 400px;
   width: 100%;
   background-color: #dc9c2c;
-  justify-content: center;
-  align-items: center;
-  padding-top: 20px;
   background-image: url('../images/textured-bg.png');
 }
 
 .main-header div {
   display: flex;
+  flex-direction: column;
   width: 100%;
   justify-content: center;
   align-items: center;
 }
 
 
-/* .nav-img {
+@media only screen and (min-width: 1024px){
+  .main-header{
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    width: 80%;
+  }
+
+  #header-img-div{
+    display: flex;
+    margin-top: 100px;
+    flex-basis: 40%;
+    background-color: #f4f1ec;
+    justify-content: center;
+  }
+
+
   
-} */
+}
