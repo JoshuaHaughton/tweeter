@@ -51,6 +51,7 @@
 
 .new-tweet label {
   font-size: x-large;
+  margin-bottom: 0;
 }
 
 .spacer {
