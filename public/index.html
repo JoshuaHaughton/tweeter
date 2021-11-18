@@ -70,6 +70,16 @@
 
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
+        <div id="error-length">
+          <i class="fas fa-exclamation-circle"></i>
+          <p>This tweet is longer than 140 characters!</p>
+          <i class="fas fa-exclamation-circle"></i>
+        </div>
+        <div id="error-empty">
+          <i class="fas fa-exclamation-circle"></i>
+          <p>This tweet is empty!</p>
+          <i class="fas fa-exclamation-circle"></i>
+        </div>
         <form action="/tweets" method="POST" id="tweet-form"> 
           <label for="tweet-text">What are you humming about?</label>
           <div class='spacer'></div>

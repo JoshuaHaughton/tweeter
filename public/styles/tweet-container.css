@@ -107,3 +107,16 @@
 .tweet-content {
   font-weight: 600;
 }
+
+#error-length, #error-empty {
+  display: none;
+  border: 2px solid red;
+  color: red;
+  text-align: center;
+  width: 80%;
+}
+
+#error-length p, #error-empty p {
+  display: inline;
+  padding: 0
+}

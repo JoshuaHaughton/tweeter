@@ -132,14 +132,18 @@ $(() => {
     let length = data.value.length;
 
     if(length <= 0) {
-      alert('Your tweet is empty!')
+      $('#error-length').hide();
+      $('#error-empty').show();
     }
 
     if(length > 140) {
-      alert('Your tweet is longer than 140 characters!')
+      $('#error-empty').hide();
+      $('#error-length').show();
     }
     
     if (length < 140 && length > 0) {
+      $('#error-empty').hide();
+      $('#error-length').hide();
       $.post( "/tweets", serialized)
         .then(newTweet());
     }
