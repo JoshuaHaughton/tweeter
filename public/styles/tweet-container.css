@@ -4,11 +4,10 @@
   flex-flow: wrap;
   width: 100%;
   justify-content: center;
-  border: 4px solid rgb(31, 30, 30);
   margin: 60px 0 30px 0;
 }
 
-.tweet-container:hover {
+.tweet-container article:hover {
   box-shadow: 5px 5px 10px #000000;
 }
 
@@ -21,10 +20,9 @@
 
 .tweet-container article {
   width: 100%;
-  border-top: 2px solid rgb(31, 30, 30);
-  border-bottom: 2px solid rgb(31, 30, 30);
-  /* margin-bottom: 100px; */
-  padding: 30px 0 5px 0;
+  border: 3px solid rgb(31, 30, 30);
+  margin-bottom: 30px;
+  padding: 20px 0 5px 0;
 }
 
 .tweet-container div {
@@ -33,9 +31,16 @@
 
 .tweet-container .name {
   display: flex;
-  text-align: left;
-  padding-left: 1.5em;
+  /* text-align: left; */
+  /* padding-left: 1.5em; */
   justify-content: left;
+  padding: 0 0 15px 0;
+  /* border: 3px solid orange; */
+}
+
+.name img, .name p {
+  /* background-color: red; */
+  margin-left: 25px;
 }
 
 .tweet-container p {

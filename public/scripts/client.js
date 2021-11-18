@@ -6,30 +6,30 @@
 
 //On-ready shorthand
 
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1637024204390
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1637110604390
-  }
-]
+// const data = [
+//   {
+//     "user": {
+//       "name": "Newton",
+//       "avatars": "https://i.imgur.com/73hZDYK.png",
+//       "handle": "@SirIsaac"
+//     },
+//     "content": {
+//       "text": "If I have seen further it is by standing on the shoulders of giants"
+//     },
+//     "created_at": 1637024204390
+//   },
+//   {
+//     "user": {
+//       "name": "Descartes",
+//       "avatars": "https://i.imgur.com/nlhLi3I.png",
+//       "handle": "@rd"
+//     },
+//     "content": {
+//       "text": "Je pense , donc je suis"
+//     },
+//     "created_at": 1637110604390
+//   }
+// ]
 
 
 $(() => {
@@ -90,11 +90,25 @@ $(() => {
 
 
   const loadTweets = function() {
-    $.ajax('/tweets', {method: 'GET'})
-      .then(renderTweets((data))) 
+    $.ajax('/tweets', { method: 'GET' })
+      .then(function(data) {
+        renderTweets(data)
+    })
   }
 
   loadTweets();
+
+
+  //Appends the latest added tweet to the tweet-container
+  const newTweet = function() {
+    $.ajax('/tweets', {method: 'GET'})
+      .then(function(data) {
+        latestIndex = data.length-1;
+        const $tweet = createTweetElement(data[latestIndex]);
+        $('.tweet-container').append($tweet)
+      })
+  }
+
 
 
   $("#tweet-form").submit(function(event) {
@@ -119,7 +133,8 @@ $(() => {
     }
     
     if (length < 140 && length > 0) {
-      $.post( "/tweets", serialized);
+      $.post( "/tweets", serialized)
+        .then(newTweet());
     }
 
     })
