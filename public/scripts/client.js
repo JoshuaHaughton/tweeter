@@ -80,6 +80,7 @@ $(() => {
   }
 
 
+
   const renderTweets = function(tweets) {
     for (tweet of tweets) {
       let $tweet = createTweetElement(tweet)
@@ -87,14 +88,22 @@ $(() => {
     }
    }
 
-  renderTweets(data)
+
+  const loadTweets = function() {
+    $.ajax('/tweets', {method: 'GET'})
+      .then(renderTweets((data))) 
+  }
+  
+  loadTweets();
+
 
   $("#tweet-form").submit(function(event) {
     event.preventDefault();
     const serialized = $( this ).serialize();
     $.post( "/tweets", serialized, function(data) {
-      // $( ".result" ).html( data );
+      $("#result").html(data);
       console.log(serialized);
+      console.log(data);
     });
   })
 
