@@ -93,19 +93,37 @@ $(() => {
     $.ajax('/tweets', {method: 'GET'})
       .then(renderTweets((data))) 
   }
-  
+
   loadTweets();
 
 
   $("#tweet-form").submit(function(event) {
     event.preventDefault();
     const serialized = $( this ).serialize();
-    $.post( "/tweets", serialized, function(data) {
-      $("#result").html(data);
-      console.log(serialized);
-      console.log(data);
-    });
-  })
+
+    //Returns an object containing the key-value pairs of the submitted form ({name: 'text', value: 'tweet text'})
+    var data = $(this).serializeArray().reduce(function(obj, item) {
+      obj[item.name] = item.value;
+      return obj;
+  });
+
+
+    let length = data.value.length;
+
+    if(length <= 0) {
+      alert('Your tweet is empty!')
+    }
+
+    if(length > 140) {
+      alert('Your tweet is longer than 140 characters!')
+    }
+    
+    if (length < 140 && length > 0) {
+      $.post( "/tweets", serialized);
+    }
+
+    })
+    
 
 
 })
