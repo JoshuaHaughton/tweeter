@@ -14,7 +14,7 @@ $(() => {
     return div.innerHTML;
   };
 
-  //Dynamically reates a new tweet element from tweet/user data that is passed in the form of an Object
+  //Dynamically creates a new tweet element from tweet/user data that is passed in the form of an Object
   const createTweetElement = function (tweetData) {
     const $tweet = $(`
     <article>
@@ -60,11 +60,11 @@ $(() => {
     return $tweet;
   };
 
-  //When given an array of objects containing tweet data, will dynamically create and append tweets to the class tweet-container
+  //When given an array of objects containing tweet data, will dynamically create and prepend tweets to the class tweet-container
   const renderTweets = function (tweets) {
     for (tweet of tweets) {
       let $tweet = createTweetElement(tweet);
-      $(".tweet-container").append($tweet);
+      $(".tweet-container").prepend($tweet);
     }
   };
 
@@ -77,18 +77,18 @@ $(() => {
 
   loadTweets();
 
-  //Appends the latest added tweet to the tweet-container
+  //Prepends the latest added tweet to the tweet-container
   const newTweet = function () {
     $.ajax("/tweets", { method: "GET" }).then(function (data) {
       latestIndex = data.length - 1;
       const $tweet = createTweetElement(data[latestIndex]);
-      $(".tweet-container").append($tweet);
+      $(".tweet-container").prepend($tweet);
     });
   };
 
 
 
-  
+
   $("#tweet-form").submit(function (event) {
     event.preventDefault();
     const serialized = $(this).serialize();
