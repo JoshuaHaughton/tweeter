@@ -6,7 +6,6 @@
 
 //Document-ready shorthand
 $(() => {
-
   //function to escape XSS
   const escape = function (str) {
     let div = document.createElement("div");
@@ -86,9 +85,6 @@ $(() => {
     });
   };
 
-
-
-
   $("#tweet-form").submit(function (event) {
     event.preventDefault();
     const serialized = $(this).serialize();
@@ -114,10 +110,15 @@ $(() => {
       $("#error-length").show();
     }
 
-    if (length < 140 && length > 0) {
+    if (length <= 140 && length > 0) {
       $("#error-empty").hide();
       $("#error-length").hide();
       $.post("/tweets", serialized).then(newTweet());
+
+      //Empties the textbox after a submission is made
+      $(this).each(function () {
+        this.reset();
+      });
     }
   });
 });

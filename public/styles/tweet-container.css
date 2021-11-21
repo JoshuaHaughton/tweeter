@@ -87,6 +87,7 @@
 
 .tweet-content {
   font-weight: 600;
+  word-wrap: break-word;
 }
 
 #error-length, #error-empty {
